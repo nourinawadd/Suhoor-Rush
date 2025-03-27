@@ -14,5 +14,12 @@ public class Obstacle : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+        
+        if (collision.tag == "Player")
+        {
+            Debug.Log("Hit Obstacle");
+            FindObjectOfType<GameManager>().DecreaseScore();
+        }
+        
     }
 }
