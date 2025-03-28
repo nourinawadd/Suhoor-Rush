@@ -10,8 +10,10 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI countdownText;
     public GameObject gameOverPanel;
+    AudioManager audioManager;
 
     public void Awake(){
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         Play();
     }
 
@@ -37,9 +39,22 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        audioManager.PlayGameOverMusic();
+        Obstacle[] obstacles = FindObjectsOfType<Obstacle>();
+        for (int i = 0; i < obstacles.Length; i++){
+            Destroy(obstacles[i].gameObject);
+        }
+
+        Sweets[] sweets = FindObjectsOfType<Sweets>();
+        for (int i = 0; i < sweets.Length; i++){
+            Destroy(sweets[i].gameObject);
+        }
+
+        player.enabled = false;
         countdownText.gameObject.SetActive(false);
         scoreText.gameObject.SetActive(false);
-        gameOverPanel.SetActive(true);        
+        gameOverPanel.SetActive(true);
+
     }
 
     public void IncreaseScore(int Score_Weight)

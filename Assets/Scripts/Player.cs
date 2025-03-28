@@ -5,10 +5,12 @@ public class Player : MonoBehaviour
     public float playerSpeed;
     private Rigidbody2D rb;
     private Vector2 playerDirection;
+    AudioManager audioManager;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();   
+        rb = GetComponent<Rigidbody2D>();
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
     
     private void OnEnable()
@@ -35,6 +37,7 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.tag == "Sweet")
         {
+            audioManager.PlaySFX(audioManager.gain);
             Debug.Log("Hit Sweet");
             FindObjectOfType<GameManager>().IncreaseScore(5);
             Destroy(other.gameObject);
@@ -43,6 +46,7 @@ public class Player : MonoBehaviour
         {
             if(FindObjectOfType<GameManager>().ReturnScore()!=0)
              {
+                audioManager.PlaySFX(audioManager.lose);
                 Debug.Log("Hit Obstacle");
                 FindObjectOfType<GameManager>().DecreaseScore(5);
                 Destroy(other.gameObject);
