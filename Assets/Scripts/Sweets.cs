@@ -19,6 +19,11 @@ public class Sweets : MonoBehaviour
             Destroy(this.gameObject);
         }
 
+        if (collision.tag == "Sweet")
+        {
+            Destroy(this.gameObject);
+        }
+
         if (collision.tag == "Obstacle")
         {
             Destroy(this.gameObject);
