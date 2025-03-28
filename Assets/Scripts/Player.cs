@@ -9,17 +9,38 @@ public class Player : MonoBehaviour
     public Sprite[] sprites;
     private int spriteIndex;
     AudioManager audioManager;
-    
+
+    public CharacterDatabase characterDatabase;
+    private int selectedOption = 0;
     void Awake()
     {
+        if (selectedOption == 0)
+        {
+            spriteIndex = 0;
+
+        }
+        else
+        {
+            spriteIndex = 5;
+        }
         rb = GetComponent<Rigidbody2D>();
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+       
     }
 
     void Start()
     {
+        if (!PlayerPrefs.HasKey("selectedOption"))
+        {
+            selectedOption = 0;
+        }
+        else
+        {
+            load();
+        }
         InvokeRepeating(nameof(AnimateSprite), 0.15f, 0.15f);
+       
     }
     
     private void OnEnable()
@@ -65,12 +86,32 @@ public class Player : MonoBehaviour
     private void AnimateSprite()
     {
         spriteIndex ++;
-
-        if(spriteIndex >= sprites.Length)
+        if(selectedOption==0)
         {
-            spriteIndex = 0;
+            if (spriteIndex >= 4)
+            {
+                spriteIndex = 0;
+            }
+
+            spriteRenderer.sprite = sprites[spriteIndex];
+        }
+        else if (selectedOption == 1)
+        {
+            
+            if (spriteIndex >= 9)
+            {
+                spriteIndex = 5;
+            }
+
+            spriteRenderer.sprite = sprites[spriteIndex];
         }
 
-        spriteRenderer.sprite = sprites[spriteIndex];
+    }
+
+  
+
+    private void load()
+    {
+        selectedOption = PlayerPrefs.GetInt("selectedOption");
     }
 }
