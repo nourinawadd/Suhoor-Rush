@@ -34,7 +34,6 @@ public class Player : MonoBehaviour
     {
         float directionY = Input.GetAxisRaw("Vertical");
         playerDirection = new Vector2(0, directionY).normalized;
-        
     }
 
     void FixedUpdate()
