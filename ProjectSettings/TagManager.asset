@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - Border
+  - Sweet
+  - Obstacle
+  - Audio
   layers:
   - Default
   - TransparentFX
@@ -41,6 +44,18 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: 1Sky
+    uniqueID: 1299967581
+    locked: 0
+  - name: 2Clouds1
+    uniqueID: 1952962133
+    locked: 0
+  - name: 3Clouds2
+    uniqueID: 358425069
+    locked: 0
+  - name: 4Game
+    uniqueID: 3744931471
     locked: 0
   m_RenderingLayers:
   - Default
