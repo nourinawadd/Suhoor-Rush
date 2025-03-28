@@ -38,20 +38,25 @@ public class GameManager : MonoBehaviour
         gameOverPanel.SetActive(true);        
     }
 
-    public void IncreaseScore()
+    public void IncreaseScore(int Score_Weigth)
     {
-        score++;
+        score+=Score_Weigth;
         scoreText.text = score.ToString();
     }
 
-    public void DecreaseScore()
+    public void DecreaseScore(int Score_Weigth)
     {
-        score--;
+        score-=Score_Weigth;
         scoreText.text = score.ToString();
     }
 
     public void Replay()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public int ReturnScore()
+    {
+        return score;
     }
 }
