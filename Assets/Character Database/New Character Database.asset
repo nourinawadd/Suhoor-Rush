@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 843232030b262a5448214bf411c7b0c3, type: 3}
+  m_Name: New Character Database
+  m_EditorClassIdentifier: 
+  character:
+  - CharacterName: ALI
+    CharacterSprite: {fileID: -4684219048741854707, guid: d1e8e07e0e03e03469afd39ca65e58aa, type: 3}
+  - CharacterName: FATMA
+    CharacterSprite: {fileID: 3988917615649030624, guid: 82c8879d6bf2e1444ab21000a6e84d8c, type: 3}
