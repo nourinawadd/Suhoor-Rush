@@ -5,12 +5,21 @@ public class Player : MonoBehaviour
     public float playerSpeed;
     private Rigidbody2D rb;
     private Vector2 playerDirection;
+    private SpriteRenderer spriteRenderer;
+    public Sprite[] sprites;
+    private int spriteIndex;
     AudioManager audioManager;
-
-    void Start()
+    
+    void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    void Start()
+    {
+        InvokeRepeating(nameof(AnimateSprite), 0.15f, 0.15f);
     }
     
     private void OnEnable()
@@ -52,5 +61,17 @@ public class Player : MonoBehaviour
                 Destroy(other.gameObject);
             }
         }
+    }
+
+    private void AnimateSprite()
+    {
+        spriteIndex ++;
+
+        if(spriteIndex >= sprites.Length)
+        {
+            spriteIndex = 0;
+        }
+
+        spriteRenderer.sprite = sprites[spriteIndex];
     }
 }
