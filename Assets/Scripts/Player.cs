@@ -35,7 +35,7 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.tag == "Score")
         {
-            FindObjectOfType<GameManager>().IncreaseScore();
+            FindObjectOfType<GameManager>().IncreaseScore(1);
         }
     }
 }
