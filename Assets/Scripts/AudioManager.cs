@@ -24,8 +24,25 @@ public class AudioManager : MonoBehaviour
 
     public void PlayGameOverMusic()
     {
+        if (musicSource == null || !musicSource.enabled)
+        {
+            Debug.LogError("Music Source is missing or disabled!");
+            return;
+        }
+
+        // Ensure the same clip is not replayed
+        if (musicSource.isPlaying && musicSource.clip == gameOver)
+        {
+            Debug.Log("Game Over music is already playing!");
+            return;
+        }
+
         musicSource.Stop();
         musicSource.clip = gameOver;
         musicSource.Play();
+        Debug.Log("Playing Game Over Music: " + gameOver.name);
     }
+
+
+
 }

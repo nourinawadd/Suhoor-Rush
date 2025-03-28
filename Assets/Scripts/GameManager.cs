@@ -39,7 +39,6 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        audioManager.PlayGameOverMusic();
         Obstacle[] obstacles = FindObjectsOfType<Obstacle>();
         for (int i = 0; i < obstacles.Length; i++){
             Destroy(obstacles[i].gameObject);
@@ -54,6 +53,7 @@ public class GameManager : MonoBehaviour
         countdownText.gameObject.SetActive(false);
         scoreText.gameObject.SetActive(false);
         gameOverPanel.SetActive(true);
+        audioManager.PlayGameOverMusic();
 
     }
 
