@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 3781289862501784471}
   - component: {fileID: 7418931811832441423}
   - component: {fileID: 1830972548704095575}
+  - component: {fileID: -6068847359390741501}
   m_Layer: 0
   m_Name: Lantern3
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70,7 +71,7 @@ CapsuleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.7, y: 1.4}
+  m_Size: {x: 0.6, y: 1.2}
   m_Direction: 0
 --- !u!114 &7418931811832441423
 MonoBehaviour:
@@ -84,6 +85,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f0c8ba5febf5e47b083e84fbe71750, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ObstacleWeight: 0
 --- !u!50 &1830972548704095575
 Rigidbody2D:
   serializedVersion: 5
@@ -111,6 +113,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &-6068847359390741501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4331914372735772024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f0c8ba5febf5e47b083e84fbe71750, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObstacleWeight: 5
 --- !u!1 &6276535728982685632
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,8 +199,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -550035825
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -5103521279750251580, guid: e900767220e4d6e42a0c97c2f9163021, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

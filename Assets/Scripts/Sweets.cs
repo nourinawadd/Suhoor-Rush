@@ -14,8 +14,6 @@ public class Sweets : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //Adjuct the value of ScoreWeight according to the type need to be added 
-
         if (collision.tag == "Border")
         {
             Destroy(this.gameObject);
@@ -24,14 +22,6 @@ public class Sweets : MonoBehaviour
         if (collision.tag == "Obstacle")
         {
             Destroy(this.gameObject);
-        }
-
-        if (collision.tag == "Player")
-        {
-            
-                Debug.Log("Hit Sweet");
-                FindObjectOfType<GameManager>().IncreaseScore(1);
-            
         }
 
     }

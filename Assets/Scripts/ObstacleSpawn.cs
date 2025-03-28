@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ObstacleSpawn : MonoBehaviour
 {
-    public GameObject obstacle;
+    public GameObject[] Prefab;
     public float maxX;
     public float maxY;
     public float minX;
@@ -22,7 +22,7 @@ public class ObstacleSpawn : MonoBehaviour
     {
         float randomX = Random.Range(minX, maxX);
         float randomY = Random.Range(minY, maxY);
-
-        Instantiate(obstacle, transform.position + new Vector3(randomX, randomY, 0), transform.rotation);
+        int Prefab_Index = Random.Range(0, Prefab.Length);
+        Instantiate(Prefab[Prefab_Index], transform.position + new Vector3(randomX, randomY, 0), Quaternion.identity);
     }
 }

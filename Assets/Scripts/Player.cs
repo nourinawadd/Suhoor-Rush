@@ -33,9 +33,20 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Score")
+        if (other.gameObject.tag == "Sweet")
         {
-            FindObjectOfType<GameManager>().IncreaseScore(1);
+            Debug.Log("Hit Sweet");
+            FindObjectOfType<GameManager>().IncreaseScore(5);
+            Destroy(other.gameObject);
+        }
+        if (other.gameObject.tag == "Obstacle")
+        {
+            if(FindObjectOfType<GameManager>().ReturnScore()!=0)
+             {
+                Debug.Log("Hit Obstacle");
+                FindObjectOfType<GameManager>().DecreaseScore(5);
+                Destroy(other.gameObject);
+            }
         }
     }
 }

@@ -27,6 +27,7 @@ public class SweetsSpawner : MonoBehaviour
         float randomX = Random.Range(minX, maxX);
         float randomY = Random.Range(minY, maxY);
         int Prefab_Index = Random.Range(0, Prefab.Length);
-        Instantiate(Prefab[Prefab_Index], transform.position + new Vector3(randomX, randomY, 0), Quaternion.identity);        
+        Instantiate(Prefab[Prefab_Index], transform.position + new Vector3(randomX, randomY, 0), Quaternion.identity);
+        
     }    
 }
