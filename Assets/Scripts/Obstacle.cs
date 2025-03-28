@@ -3,6 +3,7 @@ using UnityEngine;
 public class Obstacle : MonoBehaviour
 {
     private GameObject player;
+    public int ObstacleWeight;
 
     void Start()
     {
@@ -15,20 +16,9 @@ public class Obstacle : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-        if (collision.tag == "Score")
+        if (collision.tag == "Sweet")
         {
             Destroy(this.gameObject);
         }
-
-        if (collision.tag == "Player")
-        {
-            if(FindObjectOfType<GameManager>().ReturnScore()!=0)
-             {
-                Debug.Log("Hit Obstacle");
-                FindObjectOfType<GameManager>().DecreaseScore(5);
-            }
-            
-        }
-        
     }
 }

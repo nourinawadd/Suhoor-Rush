@@ -10,8 +10,10 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI countdownText;
     public GameObject gameOverPanel;
+    AudioManager audioManager;
 
     public void Awake(){
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         Play();
     }
 
@@ -29,24 +31,41 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < obstacles.Length; i++){
             Destroy(obstacles[i].gameObject);
         }
+        Sweets[] sweets = FindObjectsOfType<Sweets>();
+        for (int i = 0; i < sweets.Length; i++){
+            Destroy(sweets[i].gameObject);
+        }
     }
 
     public void GameOver()
     {
+        Obstacle[] obstacles = FindObjectsOfType<Obstacle>();
+        for (int i = 0; i < obstacles.Length; i++){
+            Destroy(obstacles[i].gameObject);
+        }
+
+        Sweets[] sweets = FindObjectsOfType<Sweets>();
+        for (int i = 0; i < sweets.Length; i++){
+            Destroy(sweets[i].gameObject);
+        }
+
+        player.enabled = false;
         countdownText.gameObject.SetActive(false);
         scoreText.gameObject.SetActive(false);
-        gameOverPanel.SetActive(true);        
+        gameOverPanel.SetActive(true);
+        audioManager.PlayGameOverMusic();
+
     }
 
-    public void IncreaseScore(int Score_Weigth)
+    public void IncreaseScore(int Score_Weight)
     {
-        score+=Score_Weigth;
+        score += Score_Weight;
         scoreText.text = score.ToString();
     }
 
-    public void DecreaseScore(int Score_Weigth)
+    public void DecreaseScore(int Score_Weight)
     {
-        score-=Score_Weigth;
+        score -= Score_Weight;
         scoreText.text = score.ToString();
     }
 
