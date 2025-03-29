@@ -67,7 +67,7 @@ public class Player : MonoBehaviour
         {
             audioManager.PlaySFX(audioManager.gain);
             Debug.Log("Hit Sweet");
-            FindObjectOfType<GameManager>().IncreaseScore(5);
+            FindObjectOfType<GameManager>().IncreaseScore(other.gameObject.GetComponent<Sweets>().ScoreWeight);
             Destroy(other.gameObject);
         }
         if (other.gameObject.tag == "Obstacle")
@@ -87,14 +87,11 @@ public class Player : MonoBehaviour
 
             if(FindObjectOfType<GameManager>().ReturnScore() < other.gameObject.GetComponent<Obstacle>().ObstacleWeight)
             {
-<<<<<<< Updated upstream
-                FindObjectOfType<GameManager>().DecreaseScore(5);
-=======
                 FindObjectOfType<GameManager>().DecreaseScore(FindObjectOfType<GameManager>().ReturnScore());
             }
-            else{
+            else
+            {
                 FindObjectOfType<GameManager>().DecreaseScore(other.gameObject.GetComponent<Obstacle>().ObstacleWeight);
->>>>>>> Stashed changes
             }
             
         }

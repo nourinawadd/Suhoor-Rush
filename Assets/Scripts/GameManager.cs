@@ -86,6 +86,7 @@ public class GameManager : MonoBehaviour
         gameHierarchy.transform.position = Vector3.zero;
         player.enabled = true;
         cameraMovement.cameraSpeed = 12f;
+        cameraMovement.acceleration = 0.1f;
         player.OnEnable();
 
         // Reset score and UI

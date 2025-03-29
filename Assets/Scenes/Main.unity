@@ -1020,7 +1020,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67b3f2baab56e1445b394cea333abcf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingTime: 50
+  startingTime: 52
   countdownFill: {fileID: 883946857}
   countdownFillRed: {fileID: 1152521976}
 --- !u!1 &497391379
