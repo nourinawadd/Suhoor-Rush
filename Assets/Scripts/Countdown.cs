@@ -60,7 +60,7 @@ public class Countdown : MonoBehaviour
         if (isCounting)
         {
             currentTime -= 1 * Time.deltaTime;
-            // countdownText.text = currentTime.ToString("0") + "s Left";
+            //countdownText.text = currentTime.ToString("0") + "s Left";
             countdownFill.fillAmount = currentTime / startingTime;
             countdownFillRed.fillAmount = currentTime / startingTime;
 
@@ -68,7 +68,7 @@ public class Countdown : MonoBehaviour
             {
                 Debug.Log("Start alert");
                 countdownFill.enabled = false;
-                // countdownFillRed.enabled = true;
+                countdownFillRed.enabled = true;
                 countdownFillRed.fillAmount = currentTime / startingTime;
                 audioManager.PlaySFX(audioManager.countdown);
                 countdownPlayed = true; 

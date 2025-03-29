@@ -81,12 +81,13 @@ public class Player : MonoBehaviour
                 spriteRenderer.sprite = sprites[11];
             }
             
+            audioManager.PlaySFX(audioManager.lose);
+            Debug.Log("Hit Obstacle");
+            Destroy(other.gameObject);
+
             if(FindObjectOfType<GameManager>().ReturnScore()!=0)
-             {
-                audioManager.PlaySFX(audioManager.lose);
-                Debug.Log("Hit Obstacle");
+            {
                 FindObjectOfType<GameManager>().DecreaseScore(5);
-                Destroy(other.gameObject);
             }
         }
     }
