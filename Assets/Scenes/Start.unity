@@ -208,7 +208,7 @@ GameObject:
   m_Component:
   - component: {fileID: 192585299}
   m_Layer: 0
-  m_Name: Game Manger
+  m_Name: Game Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2048,7 +2048,7 @@ GameObject:
   - component: {fileID: 1771459509}
   - component: {fileID: 1771459508}
   m_Layer: 0
-  m_Name: boyMovment
+  m_Name: boyMovement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

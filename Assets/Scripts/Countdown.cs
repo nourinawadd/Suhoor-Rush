@@ -66,6 +66,7 @@ public class Countdown : MonoBehaviour
 
             if (Mathf.Floor(currentTime) == 5 && !countdownPlayed)
             {
+                Debug.Log("Start alert");
                 countdownFill.enabled = false;
                 // countdownFillRed.enabled = true;
                 countdownFillRed.fillAmount = currentTime / startingTime;
@@ -91,6 +92,7 @@ public class Countdown : MonoBehaviour
         if (countdownFill != null)
             countdownFill.fillAmount = 1f;
         countdownFill.enabled = true;
+        countdownPlayed = false;
     }
 
     public float GetTime()
