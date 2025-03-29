@@ -11,13 +11,12 @@ public class Player : MonoBehaviour
     AudioManager audioManager;
 
     public CharacterDatabase characterDatabase;
-    private int selectedOption = 0;
+    private int selectedOption;
     void Awake()
     {
         if (selectedOption == 0)
         {
             spriteIndex = 0;
-
         }
         else
         {
@@ -73,6 +72,15 @@ public class Player : MonoBehaviour
         }
         if (other.gameObject.tag == "Obstacle")
         {
+            if (selectedOption == 0)
+            {
+                spriteRenderer.sprite = sprites[10];
+            }
+            else if (selectedOption == 1)
+            {
+                spriteRenderer.sprite = sprites[11];
+            }
+            
             if(FindObjectOfType<GameManager>().ReturnScore()!=0)
              {
                 audioManager.PlaySFX(audioManager.lose);
