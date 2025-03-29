@@ -11,7 +11,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip lose;
     public AudioClip gameOver;
 
-    private void Start()
+    public void Start()
     {
         musicSource.clip = background;
         musicSource.Play();

@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
        
     }
     
-    private void OnEnable()
+    public void OnEnable()
     {
         Vector3 position = transform.position;
         position.y = 0f;
