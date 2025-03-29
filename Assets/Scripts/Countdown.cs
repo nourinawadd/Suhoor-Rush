@@ -45,8 +45,9 @@ public class Countdown : MonoBehaviour
     private float currentTime;
     private bool isCounting = false;
     private AudioManager audioManager;
-    public TextMeshProUGUI countdownText;
     bool countdownPlayed = false;
+    public Image countdownFill;
+    public Image countdownFillRed;
 
     private void Start()
     {
@@ -59,9 +60,15 @@ public class Countdown : MonoBehaviour
         if (isCounting)
         {
             currentTime -= 1 * Time.deltaTime;
-            countdownText.text = currentTime.ToString("0") + "s Left";
+            // countdownText.text = currentTime.ToString("0") + "s Left";
+            countdownFill.fillAmount = currentTime / startingTime;
+            countdownFillRed.fillAmount = currentTime / startingTime;
+
             if (Mathf.Floor(currentTime) == 5 && !countdownPlayed)
             {
+                countdownFill.enabled = false;
+                // countdownFillRed.enabled = true;
+                countdownFillRed.fillAmount = currentTime / startingTime;
                 audioManager.PlaySFX(audioManager.countdown);
                 countdownPlayed = true; 
             }
@@ -81,6 +88,9 @@ public class Countdown : MonoBehaviour
     {
         currentTime = startingTime;
         isCounting = true;
+        if (countdownFill != null)
+            countdownFill.fillAmount = 1f;
+        countdownFill.enabled = true;
     }
 
     public float GetTime()
