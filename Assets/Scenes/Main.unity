@@ -476,6 +476,10 @@ MonoBehaviour:
   countdown: {fileID: 8300000, guid: 3ff31207e46fc8948b3b04cb203a1863, type: 3}
   gain: {fileID: 8300000, guid: 2ed80bc219ad0344dbf45941449b9e22, type: 3}
   lose: {fileID: 8300000, guid: ef9b290bbb4d9fb47829e131d30ddcc5, type: 3}
+  back: {fileID: 8300000, guid: dbe3570dc425b8b4096f97520e8ae8a4, type: 3}
+  button: {fileID: 8300000, guid: a9a5d3dbde6b77040a3d341004de1a99, type: 3}
+  menuBg: {fileID: 8300000, guid: c60d733977fbda540b787f849879b860, type: 3}
+  selectionBg: {fileID: 8300000, guid: 625e21cb2f8af77488c9b7791b76129d, type: 3}
   gameOver: {fileID: 8300000, guid: 7e8b288441f4cef4b934410251cd5ff6, type: 3}
 --- !u!4 &238589254
 Transform:
@@ -486,7 +490,7 @@ Transform:
   m_GameObject: {fileID: 238589252}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.9681337, y: 0.25541124, z: -0.09038121}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -662,7 +666,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 334746751}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 567417193}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: GoToMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &334746751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -857,11 +873,11 @@ AudioSource:
   m_GameObject: {fileID: 436687151}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -4621492587584299288, guid: 7f21aaf0c24df8948b45fe99694fb240, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.528
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1004,7 +1020,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67b3f2baab56e1445b394cea333abcf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingTime: 10
+  startingTime: 50
   countdownFill: {fileID: 883946857}
   countdownFillRed: {fileID: 1152521976}
 --- !u!1 &497391379
@@ -2742,11 +2758,11 @@ AudioSource:
   m_GameObject: {fileID: 1272332617}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 1222256296456546551, guid: 7f21aaf0c24df8948b45fe99694fb240, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.815
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0

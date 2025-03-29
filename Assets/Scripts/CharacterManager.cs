@@ -10,10 +10,14 @@ public class CharacterManager : MonoBehaviour
     public SpriteRenderer artworkSprite;
 
     private int selectedOption = 0;
+    AudioManager audioManager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        audioManager.PlaySelectionMusic();
+
         if(!PlayerPrefs.HasKey("selectedOption"))
         {
             selectedOption = 0;
@@ -27,6 +31,7 @@ public class CharacterManager : MonoBehaviour
 
     public void NextOprion()
     {
+        audioManager.PlaySFX(audioManager.back);
         selectedOption++;
 
         if(selectedOption >= characterDatabase.CharacterCount)
@@ -39,6 +44,7 @@ public class CharacterManager : MonoBehaviour
 
     public void BackOption()
     {
+        audioManager.PlaySFX(audioManager.back);
         selectedOption--;
         if(selectedOption<0)
         {
@@ -66,12 +72,19 @@ public class CharacterManager : MonoBehaviour
     }
     public void Select()
     {
+        audioManager.PlaySFX(audioManager.button);
         Save();
         ChangeScene(0);
     }
     public void ChangeScene(int sceneID)
     {
         SceneManager.LoadScene(sceneID);
+    }
+
+    public void ReturnOption()
+    {
+        audioManager.PlaySFX(audioManager.button);
+        ChangeScene(0);
     }
     
 }
