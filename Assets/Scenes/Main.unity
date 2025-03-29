@@ -861,7 +861,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.442
+  m_Volume: 0.528
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2762,7 +2762,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.815
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3960,6 +3960,8 @@ MonoBehaviour:
   - {fileID: -6669472703757289613, guid: 6dd241bffff8da8489a902147369b34b, type: 3}
   - {fileID: -6669472703757289613, guid: 6dd241bffff8da8489a902147369b34b, type: 3}
   - {fileID: -6669472703757289613, guid: 6dd241bffff8da8489a902147369b34b, type: 3}
+  - {fileID: 2098750022093499205, guid: 8a3d21f176d487d458f43487d2ffd03a, type: 3}
+  - {fileID: -2931599728189286444, guid: 6d6898149c5f8cd4b803bf9b044da79a, type: 3}
   characterDatabase: {fileID: 11400000, guid: 5e858e91843f18842a579c2c93b1c00c, type: 2}
 --- !u!50 &2069402860
 Rigidbody2D:
