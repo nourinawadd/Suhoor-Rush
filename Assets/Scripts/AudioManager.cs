@@ -9,13 +9,35 @@ public class AudioManager : MonoBehaviour
     public AudioClip countdown;
     public AudioClip gain;
     public AudioClip lose;
+    public AudioClip back;
+    public AudioClip button;
+    public AudioClip menuBg;
+    public AudioClip selectionBg;
+
     public AudioClip gameOver;
 
-    public void Start()
+    public void PlayMainGameMusic()
     {
+        musicSource.Stop();
         musicSource.clip = background;
         musicSource.Play();
     }
+
+    public void PlaySelectionMusic()
+    {
+        musicSource.Stop();
+        musicSource.clip = selectionBg;
+        musicSource.Play();
+    }
+
+    public void PlayMenuMusic()
+    {
+        musicSource.Stop();
+        musicSource.clip = menuBg;
+        musicSource.Play();
+    }
+
+
 
     public void PlaySFX(AudioClip clip)
     {
@@ -24,16 +46,10 @@ public class AudioManager : MonoBehaviour
 
     public void PlayGameOverMusic()
     {
-        if (musicSource == null || !musicSource.enabled)
-        {
-            Debug.LogError("Music Source is missing or disabled!");
-            return;
-        }
-
         // Ensure the same clip is not replayed
         if (musicSource.isPlaying && musicSource.clip == gameOver)
         {
-            Debug.Log("Game Over music is already playing!");
+            Debug.Log("Music is already playing!");
             return;
         }
 

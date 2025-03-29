@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
     }
     public void Play()
     {
+        audioManager.PlayMainGameMusic();
         score = 0;
         scoreText.text = score.ToString();
 
@@ -105,11 +106,16 @@ public class GameManager : MonoBehaviour
 
         CancelInvoke("ClearSpawners");
 
-        audioManager.Start();
+        audioManager.PlayMainGameMusic();
     }
 
     public int ReturnScore()
     {
         return score;
+    }
+
+    public void GoToMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }
