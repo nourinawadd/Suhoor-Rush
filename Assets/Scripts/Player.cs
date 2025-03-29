@@ -85,10 +85,18 @@ public class Player : MonoBehaviour
             Debug.Log("Hit Obstacle");
             Destroy(other.gameObject);
 
-            if(FindObjectOfType<GameManager>().ReturnScore()!=0)
+            if(FindObjectOfType<GameManager>().ReturnScore() < other.gameObject.GetComponent<Obstacle>().ObstacleWeight)
             {
+<<<<<<< Updated upstream
                 FindObjectOfType<GameManager>().DecreaseScore(5);
+=======
+                FindObjectOfType<GameManager>().DecreaseScore(FindObjectOfType<GameManager>().ReturnScore());
             }
+            else{
+                FindObjectOfType<GameManager>().DecreaseScore(other.gameObject.GetComponent<Obstacle>().ObstacleWeight);
+>>>>>>> Stashed changes
+            }
+            
         }
     }
 
